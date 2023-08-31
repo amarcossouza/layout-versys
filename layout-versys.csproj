@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props')" />
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6909C9F2-18CC-4264-9EAA-64D85F41C0BA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>layout_versys</RootNamespace>
+    <AssemblyName>layout-versys</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="layout\assets\css\animate.css\css\animate.css" />
+    <Content Include="layout\assets\css\bootstrap\css\bootstrap.min.css" />
+    <Content Include="layout\assets\css\chartist\chartist.css" />
+    <Content Include="layout\assets\css\component.css" />
+    <Content Include="layout\assets\css\font-awesome-n.min.css" />
+    <Content Include="layout\assets\css\font-awesome.min.css" />
+    <Content Include="layout\assets\css\ionicons.css" />
+    <Content Include="layout\assets\css\jquery.mCustomScrollbar.css" />
+    <Content Include="layout\assets\css\linearicons.css" />
+    <Content Include="layout\assets\css\morris.js\css\morris.css" />
+    <Content Include="layout\assets\css\simple-line-icons.css" />
+    <Content Include="layout\assets\css\style.css" />
+    <Content Include="layout\assets\css\style.min.css" />
+    <Content Include="layout\assets\icon\fa-brands-400.svg" />
+    <Content Include="layout\assets\icon\fa-regular-400.svg" />
+    <Content Include="layout\assets\icon\fa-solid-900.svg" />
+    <Content Include="layout\assets\icon\feather\css\feather.css" />
+    <Content Include="layout\assets\icon\feather\fonts\feather.svg" />
+    <Content Include="layout\assets\icon\font-awesome\css\font-awesome.css" />
+    <Content Include="layout\assets\icon\font-awesome\css\font-awesome.min.css" />
+    <Content Include="layout\assets\icon\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="layout\assets\icon\fontawesome-webfont.svg" />
+    <Content Include="layout\assets\icon\icofont\css\icofont.css" />
+    <Content Include="layout\assets\icon\ionicons.svg" />
+    <Content Include="layout\assets\icon\Linearicons-Free.svg" />
+    <Content Include="layout\assets\icon\Simple-Line-Icons.svg" />
+    <Content Include="layout\assets\icon\themify-icons\fonts\themify.svg" />
+    <Content Include="layout\assets\icon\themify-icons\themify-icons.css" />
+    <Content Include="layout\assets\images\avatar-4.jpg" />
+    <Content Include="layout\assets\images\breadcrumb-bg.jpg" />
+    <Content Include="layout\assets\images\logo-blue.png" />
+    <Content Include="layout\assets\images\logo-login.png" />
+    <Content Include="layout\assets\images\logo.png" />
+    <Content Include="layout\assets\images\modulos.jpg" />
+    <Content Include="layout\assets\images\select-arrow.png" />
+    <Content Include="layout\assets\images\user-bg.jpg" />
+    <Content Include="layout\assets\js\animation.js" />
+    <Content Include="layout\assets\js\bootstrap-growl.min.js" />
+    <Content Include="layout\assets\js\bootstrap\js\bootstrap.min.js" />
+    <Content Include="layout\assets\js\classie.js" />
+    <Content Include="layout\assets\js\color-json-common-page.js" />
+    <Content Include="layout\assets\js\common-pages.js" />
+    <Content Include="layout\assets\js\common-pages.min.js" />
+    <Content Include="layout\assets\js\counter.js" />
+    <Content Include="layout\assets\js\float\curvedLines.js" />
+    <Content Include="layout\assets\js\float\jquery.flot.categories.js" />
+    <Content Include="layout\assets\js\float\jquery.flot.js" />
+    <Content Include="layout\assets\js\float\jquery.flot.pie.js" />
+    <Content Include="layout\assets\js\float\jquery.flot.tooltip.min.js" />
+    <Content Include="layout\assets\js\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="layout\assets\js\jquery-ui\jquery-ui.min.js" />
+    <Content Include="layout\assets\js\jquery.easypiechart.min.js" />
+    <Content Include="layout\assets\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="layout\assets\js\jquery.mousewheel.min.js" />
+    <Content Include="layout\assets\js\jquery.quicksearch.js" />
+    <Content Include="layout\assets\js\jquery\jquery.min.js" />
+    <Content Include="layout\assets\js\modal.js" />
+    <Content Include="layout\assets\js\modalEffects.js" />
+    <Content Include="layout\assets\js\modernizr\css-scrollbars.js" />
+    <Content Include="layout\assets\js\modernizr\modernizr.js" />
+    <Content Include="layout\assets\js\morris.js\morris.js" />
+    <Content Include="layout\assets\js\owl-custom.js" />
+    <Content Include="layout\assets\js\pcoded.min.js" />
+    <Content Include="layout\assets\js\popper.js\popper.min.js" />
+    <Content Include="layout\assets\js\raphael\raphael.min.js" />
+    <Content Include="layout\assets\js\rating.js" />
+    <Content Include="layout\assets\js\script.js" />
+    <Content Include="layout\assets\js\script.min.js" />
+    <Content Include="layout\assets\js\SmoothScroll.js" />
+    <Content Include="layout\assets\js\swiper-custom.js" />
+    <Content Include="layout\assets\js\vertical\horizontal-layout.min.js" />
+    <Content Include="layout\assets\js\vertical\menu\box-layout.js" />
+    <Content Include="layout\assets\js\vertical\menu\menu-compact.js" />
+    <Content Include="layout\assets\js\vertical\menu\menu-header-fixed.js" />
+    <Content Include="layout\assets\js\vertical\menu\menu-hori-fixed.js" />
+    <Content Include="layout\assets\js\vertical\menu\menu-rtl.js" />
+    <Content Include="layout\assets\js\vertical\menu\menu-sidebar-fixed.js" />
+    <Content Include="layout\assets\js\vertical\menu\menu-static.js" />
+    <Content Include="layout\assets\js\vertical\vertical-layout.js" />
+    <Content Include="layout\assets\js\vertical\vertical-layout.min.js" />
+    <Content Include="layout\assets\pages\accordion\accordion.js" />
+    <Content Include="layout\assets\pages\accordion\accordion.min.js" />
+    <Content Include="layout\assets\pages\chart\morris\morris-custom-chart.js" />
+    <Content Include="layout\assets\pages\dashboard\amchart\css\amchart.css" />
+    <Content Include="layout\assets\pages\dashboard\amchart\css\export.css" />
+    <Content Include="layout\assets\pages\dashboard\amchart\js\amcharts.js" />
+    <Content Include="layout\assets\pages\dashboard\amchart\js\custom-amchart.js" />
+    <Content Include="layout\assets\pages\dashboard\amchart\js\export.min.js" />
+    <Content Include="layout\assets\pages\dashboard\amchart\js\images\dragIconRoundBig.svg" />
+    <Content Include="layout\assets\pages\dashboard\amchart\js\images\dragIconRoundBigH.svg" />
+    <Content Include="layout\assets\pages\dashboard\amchart\js\light.js" />
+    <Content Include="layout\assets\pages\dashboard\amchart\js\serial.js" />
+    <Content Include="layout\assets\pages\dashboard\custom-dashboard.js" />
+    <Content Include="layout\assets\pages\dashboard\custom-dashboard.min.js" />
+    <Content Include="layout\assets\pages\google-maps\gmaps.js" />
+    <Content Include="layout\assets\pages\google-maps\google-maps.js" />
+    <Content Include="layout\assets\pages\icon-modal.js" />
+    <Content Include="layout\assets\pages\notification\notification.css" />
+    <Content Include="layout\assets\pages\notification\notification.js" />
+    <Content Include="layout\assets\pages\todo\todo.js" />
+    <Content Include="layout\assets\pages\waves\css\waves.min.css" />
+    <Content Include="layout\assets\pages\waves\js\waves.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\amcharts.js" />
+    <Content Include="layout\assets\pages\widget\amchart\amcharts.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\ammap.js" />
+    <Content Include="layout\assets\pages\widget\amchart\ammap.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\continentsLow.js" />
+    <Content Include="layout\assets\pages\widget\amchart\continentsLow.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\export.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\gauge.js" />
+    <Content Include="layout\assets\pages\widget\amchart\gauge.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\images\dragIconRoundBig.svg" />
+    <Content Include="layout\assets\pages\widget\amchart\images\lens.svg" />
+    <Content Include="layout\assets\pages\widget\amchart\light.js" />
+    <Content Include="layout\assets\pages\widget\amchart\light.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\pie.js" />
+    <Content Include="layout\assets\pages\widget\amchart\pie.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\serial.js" />
+    <Content Include="layout\assets\pages\widget\amchart\serial.min.js" />
+    <Content Include="layout\assets\pages\widget\amchart\usaLow.js" />
+    <Content Include="layout\assets\pages\widget\amchart\worldLow.js" />
+    <Content Include="layout\assets\pages\widget\amchart\worldLow.min.js" />
+    <Content Include="layout\assets\pages\widget\excanvas.js" />
+    <Content Include="layout\index.html" />
+    <Content Include="layout\inicio.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\apontamento-de-horas.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\aprovacao-de-horas.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\cadastro-departamento.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\cadastro-pessoal.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\cadastro-projetos.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\departamento-pessoal.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\relatorio-agrupado-por-projetos.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\relatorio-consolidado.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\relatorio-consumo-de-horas-por-departamento.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\relatorio-controle-de-horas-extras.html" />
+    <Content Include="layout\modulo-apontamento-de-horas\relatorio-projetos-agrupado-por-dia.html" />
+    <Content Include="layout\modulo-gestao-de-curriculos\controle-de-acesso.html" />
+    <Content Include="layout\modulo-gestao-de-curriculos\gestao-de-curriculos.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="layout\assets\css\font\barlow-medium-webfont.woff" />
+    <Content Include="layout\assets\css\font\barlow-medium-webfont.woff2" />
+    <Content Include="layout\assets\icon\CAW.TTF" />
+    <Content Include="layout\assets\icon\fa-brands-400.eot" />
+    <Content Include="layout\assets\icon\fa-brands-400.ttf" />
+    <Content Include="layout\assets\icon\fa-brands-400.woff" />
+    <Content Include="layout\assets\icon\fa-brands-400.woff2" />
+    <Content Include="layout\assets\icon\fa-regular-400.eot" />
+    <Content Include="layout\assets\icon\fa-regular-400.ttf" />
+    <Content Include="layout\assets\icon\fa-regular-400.woff" />
+    <Content Include="layout\assets\icon\fa-regular-400.woff2" />
+    <Content Include="layout\assets\icon\fa-solid-900.eot" />
+    <Content Include="layout\assets\icon\fa-solid-900.ttf" />
+    <Content Include="layout\assets\icon\fa-solid-900.woff" />
+    <Content Include="layout\assets\icon\fa-solid-900.woff2" />
+    <Content Include="layout\assets\icon\feather\fonts\feather.eot" />
+    <Content Include="layout\assets\icon\feather\fonts\feather.ttf" />
+    <Content Include="layout\assets\icon\feather\fonts\feather.woff" />
+    <Content Include="layout\assets\icon\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="layout\assets\icon\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="layout\assets\icon\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="layout\assets\icon\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="layout\assets\icon\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="layout\assets\icon\fontawesome-webfont.eot" />
+    <Content Include="layout\assets\icon\fontawesome-webfont.ttf" />
+    <Content Include="layout\assets\icon\fontawesome-webfont.woff" />
+    <Content Include="layout\assets\icon\fontawesome-webfont.woff2" />
+    <Content Include="layout\assets\icon\FontAwesome.otf" />
+    <Content Include="layout\assets\icon\icofont\fonts\icofont.eot" />
+    <Content Include="layout\assets\icon\icofont\fonts\icofont.ttf" />
+    <Content Include="layout\assets\icon\icofont\fonts\icofont.woff" />
+    <Content Include="layout\assets\icon\ionicons.eot" />
+    <Content Include="layout\assets\icon\ionicons.ttf" />
+    <Content Include="layout\assets\icon\ionicons.woff" />
+    <Content Include="layout\assets\icon\Linearicons-Free.eot" />
+    <Content Include="layout\assets\icon\Linearicons-Free.ttf" />
+    <Content Include="layout\assets\icon\Linearicons-Free.woff" />
+    <Content Include="layout\assets\icon\Linearicons-Free.woff2" />
+    <Content Include="layout\assets\icon\SEGOEUI.ttf" />
+    <Content Include="layout\assets\icon\SEGOEUIB.TTF" />
+    <Content Include="layout\assets\icon\segoeuii.ttf" />
+    <Content Include="layout\assets\icon\SEGOEUIZ.TTF" />
+    <Content Include="layout\assets\icon\Simple-Line-Icons.eot" />
+    <Content Include="layout\assets\icon\Simple-Line-Icons.ttf" />
+    <Content Include="layout\assets\icon\Simple-Line-Icons.woff" />
+    <Content Include="layout\assets\icon\Simple-Line-Icons.woff2" />
+    <Content Include="layout\assets\icon\themify-icons\fonts\themify.eot" />
+    <Content Include="layout\assets\icon\themify-icons\fonts\themify.ttf" />
+    <Content Include="layout\assets\icon\themify-icons\fonts\themify.woff" />
+    <Content Include="layout\assets\images\Thumbs.db" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55359</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55359/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets" Condition="Exists('..\packages\Microsoft.Build.Tasks.Git.1.1.1\build\Microsoft.Build.Tasks.Git.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets" Condition="Exists('..\packages\Microsoft.SourceLink.Common.1.1.1\build\Microsoft.SourceLink.Common.targets')" />
+  <Import Project="..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets" Condition="Exists('..\packages\Microsoft.SourceLink.GitHub.1.1.1\build\Microsoft.SourceLink.GitHub.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
